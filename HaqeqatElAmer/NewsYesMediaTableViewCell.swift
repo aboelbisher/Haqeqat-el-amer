@@ -39,14 +39,14 @@ class NewsYesMediaTableViewCell: UITableViewCell
         
         //self.contentView.backgroundColor = UIColor.redColor()
         
-        let newsimg = NewsImage(url: "asdasdsad", info: "asd", image: nil)
-
-        
-        self.news!.images.append(newsimg)
-        self.news!.images.append(newsimg)
-        self.news!.images.append(newsimg)
-        self.news!.images.append(newsimg)
-        self.news!.images.append(newsimg)
+//        let newsimg = NewsImage(url: "asdasdsad", info: "asd", image: nil)
+//
+//        
+//        self.news!.images.append(newsimg)
+//        self.news!.images.append(newsimg)
+//        self.news!.images.append(newsimg)
+//        self.news!.images.append(newsimg)
+//        self.news!.images.append(newsimg)
         
         self.preCalculations()
         self.initSubView()
@@ -156,14 +156,14 @@ class NewsYesMediaTableViewCell: UITableViewCell
             self.scrollView.addSubview(self.videoPlayer)
         }
         
-        
+        self.scrollView.contentSize = CGSizeMake(contentWidth , self.scrollViewSize!.height)
+
         for image in self.images
         {
             self.scrollView.addSubview(image)
         }
         
         
-        self.scrollView.contentSize = CGSizeMake(contentWidth , self.scrollViewSize!.height)
 
         
         
@@ -179,7 +179,7 @@ class NewsYesMediaTableViewCell: UITableViewCell
     {
         for (var i = 0 ; i < self.news!.images.count ; i++)
         {
-            let XValue = self.imageViewSize!.width * CGFloat(i)
+            let XValue = CGFloat( self.imageViewSize!.width * CGFloat(i) + CGFloat(20) )
             
             let frame = CGRect(x: XValue , y: 0, width: self.imageViewSize!.width, height: self.imageViewSize!.height)
             
