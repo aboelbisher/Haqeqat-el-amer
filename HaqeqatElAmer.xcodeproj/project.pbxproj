@@ -21,6 +21,8 @@
 		F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F891BD10B3700BD20ED /* Config.swift */; settings = {ASSET_TAGS = (); }; };
 		F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3FCC1BD1433700BD20ED /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3FCA1BD1433700BD20ED /* YouTubePlayer.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		F9AF3F891BD10B3700BD20ED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsNoMediaTableViewCell.swift; sourceTree = "<group>"; };
 		F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsYesMediaTableViewCell.swift; sourceTree = "<group>"; };
+		F9AF3FCA1BD1433700BD20ED /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
+		F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		F9AF3F511BD1059700BD20ED /* HaqeqatElAmer */ = {
 			isa = PBXGroup;
 			children = (
+				F9AF3FC91BD1432E00BD20ED /* YouTube */,
 				F9AF3F521BD1059700BD20ED /* AppDelegate.swift */,
 				F9AF3F541BD1059700BD20ED /* ViewController.swift */,
 				F9AF3F841BD1067100BD20ED /* News */,
@@ -152,6 +157,15 @@
 				F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */,
 			);
 			name = News;
+			sourceTree = "<group>";
+		};
+		F9AF3FC91BD1432E00BD20ED /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+				F9AF3FCA1BD1433700BD20ED /* YouTubePlayer.swift */,
+				F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */,
+			);
+			name = YouTube;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +273,7 @@
 			files = (
 				F9AF3F5D1BD1059700BD20ED /* LaunchScreen.storyboard in Resources */,
 				F9AF3F5A1BD1059700BD20ED /* Assets.xcassets in Resources */,
+				F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */,
 				F9AF3F581BD1059700BD20ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +305,7 @@
 				F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */,
 				F9AF3F861BD1068900BD20ED /* News.swift in Sources */,
 				F9AF3F531BD1059700BD20ED /* AppDelegate.swift in Sources */,
+				F9AF3FCC1BD1433700BD20ED /* YouTubePlayer.swift in Sources */,
 				F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */,
 				F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */,
 				F9AF3F881BD10AEA00BD20ED /* NewsImageView.swift in Sources */,

@@ -90,7 +90,17 @@ class News
         
         if let videoLink = newsDic[JSON_VIDEO] as? String
         {
-            self.videoLink = videoLink
+            if videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != ""
+            {
+                let endRange = videoLink.rangeOfString("&", options: NSStringCompareOptions.LiteralSearch, range: nil, locale: nil)
+                let rangeOfId = Range(start: videoLink.startIndex, end: endRange!.startIndex)
+                let newVideoId = videoLink.substringWithRange(rangeOfId)
+                
+                
+                
+                self.videoLink = newVideoId
+            }
+           
         }
         
         

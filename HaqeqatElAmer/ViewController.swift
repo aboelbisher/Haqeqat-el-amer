@@ -27,7 +27,7 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     {
         super.viewDidLoad()
         self.navigationBarCustomizations()
-        self.bringNews(0)
+        self.bringNews(2)
         self.view.backgroundColor = UIColorFromRGB("#F4F4F4", alpha: 1)
     }
 

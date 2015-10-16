@@ -25,6 +25,9 @@ class NewsYesMediaTableViewCell: UITableViewCell
     var images = [UIImageView]()
     var imageViewSize : ViewConfig?
     
+    var videoPlayer = YouTubePlayerView()
+    var videoPlayerSize : ViewConfig?
+    
 
     init( news : News ,width : CGFloat , height : CGFloat)
     {
@@ -36,14 +39,14 @@ class NewsYesMediaTableViewCell: UITableViewCell
         
         //self.contentView.backgroundColor = UIColor.redColor()
         
-        //let newsimg = NewsImage(url: "asdasdsad", info: "asd", image: nil)
+        let newsimg = NewsImage(url: "asdasdsad", info: "asd", image: nil)
 
         
-//        self.news!.images.append(newsimg)
-//        self.news!.images.append(newsimg)
-//        self.news!.images.append(newsimg)
-//        self.news!.images.append(newsimg)
-//        self.news!.images.append(newsimg)
+        self.news!.images.append(newsimg)
+        self.news!.images.append(newsimg)
+        self.news!.images.append(newsimg)
+        self.news!.images.append(newsimg)
+        self.news!.images.append(newsimg)
         
         self.preCalculations()
         self.initSubView()
@@ -74,12 +77,15 @@ class NewsYesMediaTableViewCell: UITableViewCell
         self.imageViewSize = ViewConfig(width: self.scrollViewSize!.height * 0.95 ,
             height: self.scrollViewSize!.height * 0.95,
             upMargin: 0, downMargin: 0, leftMargin: 0, rightMargin: 0)
+        
+        self.videoPlayerSize = self.imageViewSize!
     }
     
     func initSubView()
     {
         self.initContentlbl()
         self.initImages()
+        self.initVideoPlayer()
         self.initScrollView()
     }
 
@@ -143,14 +149,23 @@ class NewsYesMediaTableViewCell: UITableViewCell
         self.contentView.addConstraints(scroll_up_margin)
         
         
+        var contentWidth = self.imageViewSize!.width * CGFloat(self.images.count)
+        if self.news!.videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != ""
+        {
+            contentWidth += self.videoPlayerSize!.width
+            self.scrollView.addSubview(self.videoPlayer)
+        }
         
-        
-        self.scrollView.contentSize = CGSizeMake(self.imageViewSize!.width * CGFloat(self.images.count), self.scrollViewSize!.height)
         
         for image in self.images
         {
             self.scrollView.addSubview(image)
         }
+        
+        
+        self.scrollView.contentSize = CGSizeMake(contentWidth , self.scrollViewSize!.height)
+
+        
         
         let rect = CGRect(x: self.imageViewSize!.width * CGFloat(self.images.count) - self.imageViewSize!.width ,
             y: 0, width: self.imageViewSize!.width, height: self.imageViewSize!.height)
@@ -169,14 +184,30 @@ class NewsYesMediaTableViewCell: UITableViewCell
             let frame = CGRect(x: XValue , y: 0, width: self.imageViewSize!.width, height: self.imageViewSize!.height)
             
             let myImageView = UIImageView(frame: frame)
-            myImageView.image = UIImage(named: "default")!
+           
             
-            myImageView.backgroundColor = UIColor.greenColor()
+            myImageView.image = UIImage(named: "default")!.resizeTo(CGSizeMake(self.imageViewSize!.width * 0.7, self.imageViewSize!.width * 0.7))
+            
             
             self.images.append(myImageView)
         }
     }
     
+    
+    func initVideoPlayer()
+    {
+        let frame = CGRect(x: self.imageViewSize!.width * CGFloat(self.news!.images.count), y: 0, width: self.videoPlayerSize!.width,
+            height: self.videoPlayerSize!.height)
+        
+        self.videoPlayer = YouTubePlayerView(frame: frame)
+        
+        self.videoPlayer.webView.scrollView.scrollEnabled = false
+//        self.videoPlayer.translatesAutoresizingMaskIntoConstraints = false
+
+        // println("the video id is ====> \(newVideoId)")
+
+        self.videoPlayer.loadVideoID(self.news!.videoLink)
+    }
     
     
     
