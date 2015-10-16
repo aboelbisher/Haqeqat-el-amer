@@ -14,6 +14,13 @@
 		F9AF3F5D1BD1059700BD20ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9AF3F5B1BD1059700BD20ED /* LaunchScreen.storyboard */; };
 		F9AF3F681BD1059700BD20ED /* HaqeqatElAmerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F671BD1059700BD20ED /* HaqeqatElAmerTests.swift */; };
 		F9AF3F731BD1059700BD20ED /* HaqeqatElAmerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F721BD1059700BD20ED /* HaqeqatElAmerUITests.swift */; };
+		F9AF3F811BD105C900BD20ED /* HelpFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F801BD105C900BD20ED /* HelpFunc.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F831BD105FA00BD20ED /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F821BD105FA00BD20ED /* HttpRequest.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F861BD1068900BD20ED /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F851BD1068900BD20ED /* News.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F881BD10AEA00BD20ED /* NewsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F871BD10AEA00BD20ED /* NewsImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F891BD10B3700BD20ED /* Config.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		F9AF3F6E1BD1059700BD20ED /* HaqeqatElAmerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaqeqatElAmerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AF3F721BD1059700BD20ED /* HaqeqatElAmerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaqeqatElAmerUITests.swift; sourceTree = "<group>"; };
 		F9AF3F741BD1059700BD20ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9AF3F801BD105C900BD20ED /* HelpFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpFunc.swift; path = ../HelpFunc.swift; sourceTree = "<group>"; };
+		F9AF3F821BD105FA00BD20ED /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRequest.swift; path = ../HttpRequest.swift; sourceTree = "<group>"; };
+		F9AF3F851BD1068900BD20ED /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		F9AF3F871BD10AEA00BD20ED /* NewsImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsImageView.swift; path = ../NewsImageView.swift; sourceTree = "<group>"; };
+		F9AF3F891BD10B3700BD20ED /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsNoMediaTableViewCell.swift; sourceTree = "<group>"; };
+		F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsYesMediaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +113,11 @@
 			children = (
 				F9AF3F521BD1059700BD20ED /* AppDelegate.swift */,
 				F9AF3F541BD1059700BD20ED /* ViewController.swift */,
+				F9AF3F841BD1067100BD20ED /* News */,
 				F9AF3F561BD1059700BD20ED /* Main.storyboard */,
+				F9AF3F801BD105C900BD20ED /* HelpFunc.swift */,
+				F9AF3F891BD10B3700BD20ED /* Config.swift */,
+				F9AF3F821BD105FA00BD20ED /* HttpRequest.swift */,
 				F9AF3F591BD1059700BD20ED /* Assets.xcassets */,
 				F9AF3F5B1BD1059700BD20ED /* LaunchScreen.storyboard */,
 				F9AF3F5E1BD1059700BD20ED /* Info.plist */,
@@ -123,6 +141,17 @@
 				F9AF3F741BD1059700BD20ED /* Info.plist */,
 			);
 			path = HaqeqatElAmerUITests;
+			sourceTree = "<group>";
+		};
+		F9AF3F841BD1067100BD20ED /* News */ = {
+			isa = PBXGroup;
+			children = (
+				F9AF3F871BD10AEA00BD20ED /* NewsImageView.swift */,
+				F9AF3F851BD1068900BD20ED /* News.swift */,
+				F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */,
+				F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AF3F811BD105C900BD20ED /* HelpFunc.swift in Sources */,
+				F9AF3F831BD105FA00BD20ED /* HttpRequest.swift in Sources */,
 				F9AF3F551BD1059700BD20ED /* ViewController.swift in Sources */,
+				F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */,
+				F9AF3F861BD1068900BD20ED /* News.swift in Sources */,
 				F9AF3F531BD1059700BD20ED /* AppDelegate.swift in Sources */,
+				F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */,
+				F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */,
+				F9AF3F881BD10AEA00BD20ED /* NewsImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +517,7 @@
 				F9AF3F791BD1059700BD20ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9AF3F7A1BD1059700BD20ED /* Build configuration list for PBXNativeTarget "HaqeqatElAmerTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +526,7 @@
 				F9AF3F7C1BD1059700BD20ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9AF3F7D1BD1059700BD20ED /* Build configuration list for PBXNativeTarget "HaqeqatElAmerUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +535,7 @@
 				F9AF3F7F1BD1059700BD20ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
