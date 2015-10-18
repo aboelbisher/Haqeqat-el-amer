@@ -200,7 +200,16 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     }
     
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let vc = NewsDetailsViewController(news: self.newsArr[indexPath.section])
+        
+//        self.presentViewController(vc, animated: true) { () -> Void in
+//            
+//        }
+        
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
     
     
     

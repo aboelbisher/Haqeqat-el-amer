@@ -67,12 +67,13 @@ class NewsYesMediaTableViewCell: UITableViewCell
             height: lblheight,
             upMargin: CGFloat(10) , downMargin: 0, leftMargin: 0, rightMargin: 0)
         
-        let scrollViewHeight = self.height * 0.95 - lblheight - CGFloat(5)
+        //let scrollViewHeight = self.height * 0.95 - lblheight - CGFloat(5)
         
-        self.scrollViewSize = ViewConfig(width: self.width * 0.9 ,
-            height: scrollViewHeight,
-            upMargin: CGFloat(5),
-            downMargin: 0, leftMargin: 0, rightMargin: 0)
+        self.scrollViewSize = ViewConfig(width: self.width * 0.95 ,
+            height: CGFloat(100),
+            upMargin: 0,
+            downMargin: CGFloat(5),
+            leftMargin: 0, rightMargin: 0)
         
         self.imageViewSize = ViewConfig(width: self.scrollViewSize!.height * 0.95 ,
             height: self.scrollViewSize!.height * 0.95,
@@ -128,25 +129,25 @@ class NewsYesMediaTableViewCell: UITableViewCell
         self.contentView.addSubview(self.scrollView)
         setViewSizeConf(self.scrollView, size: self.scrollViewSize!)
         
-//        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-//            attribute: NSLayoutAttribute.CenterX,
-//            relatedBy: NSLayoutRelation.Equal,
-//            toItem: self.scrollView,
-//            attribute: NSLayoutAttribute.CenterX,
-//            multiplier: 1, constant: 0))
+        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+            attribute: NSLayoutAttribute.Bottom,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: self.scrollView,
+            attribute: NSLayoutAttribute.Bottom,
+            multiplier: 1, constant: self.scrollViewSize!.margin.down))
         
-        let views = ["upView" : self.contentLbl ,
-            "scroll" : self.scrollView]
-        
-        let metrics = ["upMargin" : self.scrollViewSize!.margin.up]
-        
-        
-        let scroll_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[scroll]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
-            metrics: metrics,
-            views: views)
-        
-        self.contentView.addConstraints(scroll_up_margin)
+//        let views = ["upView" : self.contentLbl ,
+//            "scroll" : self.scrollView]
+//        
+//        let metrics = ["upMargin" : self.scrollViewSize!.margin.up]
+//        
+//        
+//        let scroll_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[scroll]",
+//            options: NSLayoutFormatOptions.AlignAllCenterX,
+//            metrics: metrics,
+//            views: views)
+//        
+//        self.contentView.addConstraints(scroll_up_margin)
         
         
         var contentWidth = self.imageViewSize!.width * CGFloat(self.images.count)
@@ -163,7 +164,10 @@ class NewsYesMediaTableViewCell: UITableViewCell
             self.scrollView.addSubview(image)
         }
         
-        
+        if self.news!.videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != ""
+        {
+            self.scrollView.addSubview(self.videoPlayer)
+        }
 
         
         
@@ -196,7 +200,7 @@ class NewsYesMediaTableViewCell: UITableViewCell
     
     func initVideoPlayer()
     {
-        let frame = CGRect(x: self.imageViewSize!.width * CGFloat(self.news!.images.count), y: 0, width: self.videoPlayerSize!.width,
+        let frame = CGRect(x: self.imageViewSize!.width * CGFloat(self.news!.images.count) + CGFloat(20), y: 0, width: self.videoPlayerSize!.width,
             height: self.videoPlayerSize!.height)
         
         self.videoPlayer = YouTubePlayerView(frame: frame)
