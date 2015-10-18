@@ -14,8 +14,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     var tableViewSize : ViewConfig?
     let CELL_NO_MEDIA_ID = "NoMediaID"
     let CELL_YES_MEDIA_ID = "YesMediaID"
-    let CELL_NO_MEDIA_HEIGHT = CGFloat(100)
-    let CELL_YES_MEDIA_HEIGHT = CGFloat(200)
+    let CELL_NO_MEDIA_HEIGHT = CGFloat(150)
+    let CELL_YES_MEDIA_HEIGHT = CGFloat(250)
     
     let SEPARATOR_HEIGHT = CGFloat(10)
     
@@ -132,6 +132,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
             
             addSeperatorsToView(cell!, width: self.tableViewSize!.width,
                 height: self.CELL_NO_MEDIA_HEIGHT, up: true, down: true, left: true, right: true)
+            
+            cell?.dateLbl.text = news.fullDate
 
             return cell!
 
@@ -149,6 +151,9 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
                 width: self.tableViewSize!.width,
                 height: self.CELL_YES_MEDIA_HEIGHT,
                 up: true, down: true, left: true, right: true)
+            
+            cell.dateLbl.text = news.fullDate
+            
 
             return cell
         }

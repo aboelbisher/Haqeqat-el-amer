@@ -52,6 +52,7 @@ class News
     var fontColor : String
     var content : String
     var date : Date
+    var fullDate  = ""
     //var notes : [String]
     var images : [NewsImage]
     var link : String
@@ -115,6 +116,8 @@ class News
                     if let hour = datesDic[JSON_DATE_HOUR] as? String
                     {
                         self.date = Date(day: day, date: date, hour: hour)
+                        
+                        self.fullDate = date + " " + day + " " + hour
                     }
 
                 }

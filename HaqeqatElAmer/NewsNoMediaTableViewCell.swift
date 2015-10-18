@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NewsNoMediaTableViewCell: UITableViewCell
+class NewsNoMediaTableViewCell: NewsGenericCellTableViewCell
 {
     //var news : News?
     
-    var width = CGFloat(0)
-    var height = CGFloat(0)
+//    var width = CGFloat(0)
+//    var height = CGFloat(0)
     
     var contentLbl = UILabel()
     var contentLblSize : ViewConfig?
@@ -21,16 +21,18 @@ class NewsNoMediaTableViewCell: UITableViewCell
 
     init(reuseId : String , width : CGFloat , height : CGFloat)
     {
-        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: reuseId)
+        //super.init(style: UITableViewCellStyle.Default, reuseIdentifier: reuseId)
+        super.init(width: width, height: height)
+        
         //self.news = news
-        self.width = width
-        self.height = height
+//        self.width = width
+//        self.height = height
         
         
-        self.contentView.backgroundColor = UIColor.whiteColor()
+        //self.contentView.backgroundColor = UIColor.whiteColor()
         
-        self.preCalculations()
-        self.initSubViews()
+        self.myPreCalculations()
+        self.myInitSubViews()
         
     }
 
@@ -45,14 +47,14 @@ class NewsNoMediaTableViewCell: UITableViewCell
     
     
     
-    func preCalculations()
+    func myPreCalculations()
     {
         self.contentLblSize = ViewConfig(width: self.width * 0.9 ,
-            height: self.height * 0.9 ,
-            upMargin: 0, downMargin: 0, leftMargin: 0, rightMargin: 0)
+            height: self.height * 0.9 - self.dateLblSize!.height - CGFloat(2) ,
+            upMargin: CGFloat(2), downMargin: 0, leftMargin: 0, rightMargin: 0)
     }
     
-    func initSubViews()
+    func myInitSubViews()
     {
         self.initContentLbl()
     }
@@ -73,19 +75,31 @@ class NewsNoMediaTableViewCell: UITableViewCell
         self.contentLbl.numberOfLines = 3
         
         
-        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-            attribute: NSLayoutAttribute.CenterX,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: self.contentLbl,
-            attribute: NSLayoutAttribute.CenterX,
-            multiplier: 1, constant: 0))
+//        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+//            attribute: NSLayoutAttribute.CenterX,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: self.contentLbl,
+//            attribute: NSLayoutAttribute.CenterX,
+//            multiplier: 1, constant: 0))
         
-        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-            attribute: NSLayoutAttribute.CenterY,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: self.contentLbl,
-            attribute: NSLayoutAttribute.CenterY,
-            multiplier: 1, constant: 0))
+//        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+//            attribute: NSLayoutAttribute.CenterY,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: self.contentLbl,
+//            attribute: NSLayoutAttribute.CenterY,
+//            multiplier: 1, constant: 0))
+        
+        let views = ["upView" : self.dateLbl ,
+            "lbl" : self.contentLbl]
+        
+        let metrics = ["upMargin" : self.dateLblSize!.margin.up]
+        
+        let lbl_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[lbl]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: metrics,
+            views: views)
+        
+        self.contentView.addConstraints(lbl_up_margin)
         
     }
     

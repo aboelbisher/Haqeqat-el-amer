@@ -24,6 +24,7 @@
 		F9AF3FCC1BD1433700BD20ED /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3FCA1BD1433700BD20ED /* YouTubePlayer.swift */; settings = {ASSET_TAGS = (); }; };
 		F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */; settings = {ASSET_TAGS = (); }; };
 		F9AF3FCF1BD17C1F00BD20ED /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F9BF40441BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF40431BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		F9AF3FCA1BD1433700BD20ED /* YouTubePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubePlayer.swift; sourceTree = "<group>"; };
 		F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 		F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		F9BF40431BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsGenericCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */,
 				F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */,
 				F9AF3F8D1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift */,
+				F9BF40431BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */,
 				F9AF3F861BD1068900BD20ED /* News.swift in Sources */,
 				F9AF3F531BD1059700BD20ED /* AppDelegate.swift in Sources */,
+				F9BF40441BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift in Sources */,
 				F9AF3FCC1BD1433700BD20ED /* YouTubePlayer.swift in Sources */,
 				F9AF3FCF1BD17C1F00BD20ED /* NewsDetailsViewController.swift in Sources */,
 				F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */,

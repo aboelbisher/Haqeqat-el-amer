@@ -8,10 +8,10 @@
 
 import UIKit
 
-class NewsYesMediaTableViewCell: UITableViewCell
+class NewsYesMediaTableViewCell: NewsGenericCellTableViewCell
 {
-    var width = CGFloat(0)
-    var height = CGFloat(0)
+//    var width = CGFloat(0)
+//    var height = CGFloat(0)
     
     var news : News!
     
@@ -31,7 +31,9 @@ class NewsYesMediaTableViewCell: UITableViewCell
 
     init( news : News ,width : CGFloat , height : CGFloat)
     {
-        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+        //super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+        
+        super.init(width: width, height: height)
         
         self.width = width
         self.height = height
@@ -48,8 +50,8 @@ class NewsYesMediaTableViewCell: UITableViewCell
 //        self.news!.images.append(newsimg)
 //        self.news!.images.append(newsimg)
         
-        self.preCalculations()
-        self.initSubView()
+        self.myPreCalculations()
+        self.myInitSubView()
     }
 
     required init?(coder aDecoder: NSCoder)
@@ -60,12 +62,12 @@ class NewsYesMediaTableViewCell: UITableViewCell
     
     
     //MARK: init
-    func preCalculations()
+    func myPreCalculations()
     {
-        let lblheight = min(heightForView(self.news!.content, font: NEWS_FONT, width: self.width * 0.9 ) , CGFloat(90))
+        let lblheight = min(heightForView(self.news!.content, font: NEWS_FONT, width: self.width * 0.9 - self.dateLblSize!.height - CGFloat(3) ) , CGFloat(90))
         self.contentLblSize = ViewConfig(width: self.width * 0.9  ,
             height: lblheight,
-            upMargin: CGFloat(10) , downMargin: 0, leftMargin: 0, rightMargin: 0)
+            upMargin: CGFloat(3) , downMargin: 0, leftMargin: 0, rightMargin: 0)
         
         //let scrollViewHeight = self.height * 0.95 - lblheight - CGFloat(5)
         
@@ -82,7 +84,7 @@ class NewsYesMediaTableViewCell: UITableViewCell
         self.videoPlayerSize = self.imageViewSize!
     }
     
-    func initSubView()
+    func myInitSubView()
     {
         self.initContentlbl()
         self.initImages()
@@ -106,19 +108,32 @@ class NewsYesMediaTableViewCell: UITableViewCell
         self.contentLbl.numberOfLines = 3
         
         
-        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-            attribute: NSLayoutAttribute.CenterX,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: self.contentLbl,
-            attribute: NSLayoutAttribute.CenterX,
-            multiplier: 1, constant: 0))
+        let views = ["upView" : self.dateLbl ,
+            "lbl" : self.contentLbl]
         
-        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-            attribute: NSLayoutAttribute.Top,
-            relatedBy: NSLayoutRelation.Equal,
-            toItem: self.contentLbl,
-            attribute: NSLayoutAttribute.Top,
-            multiplier: 1, constant: -self.contentLblSize!.margin.up))
+        let metrics = ["upMargin" : self.contentLblSize!.margin.up]
+        
+        let lbl_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[lbl]",
+            options: NSLayoutFormatOptions.AlignAllCenterX,
+            metrics: metrics,
+            views: views)
+        
+        self.contentView.addConstraints(lbl_up_margin)
+        
+        
+//        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+//            attribute: NSLayoutAttribute.CenterX,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: self.contentLbl,
+//            attribute: NSLayoutAttribute.CenterX,
+//            multiplier: 1, constant: 0))
+//        
+//        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+//            attribute: NSLayoutAttribute.Top,
+//            relatedBy: NSLayoutRelation.Equal,
+//            toItem: self.contentLbl,
+//            attribute: NSLayoutAttribute.Top,
+//            multiplier: 1, constant: -self.contentLblSize!.margin.up))
 
     }
     
