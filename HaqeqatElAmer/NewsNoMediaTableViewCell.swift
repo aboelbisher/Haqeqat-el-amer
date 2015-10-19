@@ -95,7 +95,7 @@ class NewsNoMediaTableViewCell: NewsGenericCellTableViewCell
         let metrics = ["upMargin" : self.dateLblSize!.margin.up]
         
         let lbl_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[lbl]",
-            options: NSLayoutFormatOptions.AlignAllCenterX,
+            options: NSLayoutFormatOptions.AlignAllRight,
             metrics: metrics,
             views: views)
         

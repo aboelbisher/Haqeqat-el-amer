@@ -27,8 +27,11 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     {
         super.viewDidLoad()
         self.navigationBarCustomizations()
-        self.bringNews(2)
+        self.bringNews(0)
         self.view.backgroundColor = UIColorFromRGB("#F4F4F4", alpha: 1)
+        
+        self.preCalculations()
+        self.initSubViews()
     }
 
     override func didReceiveMemoryWarning()
@@ -71,8 +74,7 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.preCalculations()
-                    self.initSubViews()
+                    self.tableView.reloadData()
                 })
         }
     }
@@ -119,44 +121,70 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     {
         let news = self.newsArr[indexPath.section]
         
-        switch news.kind
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_NO_MEDIA_ID) as? NewsNoMediaTableViewCell
+        if cell == nil
         {
-        case .NO_MEDIA:
-            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_NO_MEDIA_ID) as? NewsNoMediaTableViewCell
-            if cell == nil
-            {
-                cell = NewsNoMediaTableViewCell(reuseId: self.CELL_NO_MEDIA_ID, width: self.tableViewSize!.width, height: self.CELL_NO_MEDIA_HEIGHT)
-            }
-            
-            cell!.contentLbl.text = news.content
-            
-            addSeperatorsToView(cell!, width: self.tableViewSize!.width,
-                height: self.CELL_NO_MEDIA_HEIGHT, up: true, down: true, left: true, right: true)
-            
-            cell?.dateLbl.text = news.fullDate
+            cell = NewsNoMediaTableViewCell(reuseId: self.CELL_NO_MEDIA_ID, width: self.tableViewSize!.width, height: self.CELL_NO_MEDIA_HEIGHT)
+        }
+        
+        cell!.contentLbl.text = news.content
+        
+        addSeperatorsToView(cell!, width: self.tableViewSize!.width,
+            height: self.CELL_NO_MEDIA_HEIGHT, up: true, down: true, left: true, right: true)
+        
+        cell?.dateLbl.text = news.fullDate
+        
+        cell?.mediaImgView.hidden =  news.kind == .NO_MEDIA
+        
+        
+        if indexPath.section >= self.newsArr.count - 1
+        {
+            self.bringNews(++self.lastIndex)
+        }
+        
+        
+        return cell!
 
-            return cell!
-
-            
-        case .YES_MEDIA:
-//            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_YES_MEDIA_ID) as? NewsYesMediaTableViewCell
-//            
+        
+//        switch news.kind
+//        {
+//        case .NO_MEDIA:
+//            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_NO_MEDIA_ID) as? NewsNoMediaTableViewCell
 //            if cell == nil
 //            {
-            let cell = NewsYesMediaTableViewCell(news : news , width: self.tableViewSize!.width, height: self.CELL_YES_MEDIA_HEIGHT)
+//                cell = NewsNoMediaTableViewCell(reuseId: self.CELL_NO_MEDIA_ID, width: self.tableViewSize!.width, height: self.CELL_NO_MEDIA_HEIGHT)
 //            }
-            cell.contentLbl.text = news.content
-            
-            addSeperatorsToView(cell,
-                width: self.tableViewSize!.width,
-                height: self.CELL_YES_MEDIA_HEIGHT,
-                up: true, down: true, left: true, right: true)
-            
-            cell.dateLbl.text = news.fullDate
-            
-
-            return cell
-        }
+//            
+//            cell!.contentLbl.text = news.content
+//            
+//            addSeperatorsToView(cell!, width: self.tableViewSize!.width,
+//                height: self.CELL_NO_MEDIA_HEIGHT, up: true, down: true, left: true, right: true)
+//            
+//            cell?.dateLbl.text = news.fullDate
+//
+//            return cell!
+//
+//            
+//        case .YES_MEDIA:
+////            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_YES_MEDIA_ID) as? NewsYesMediaTableViewCell
+////            
+////            if cell == nil
+////            {
+//            let cell = NewsYesMediaTableViewCell(news : news , width: self.tableViewSize!.width, height: self.CELL_YES_MEDIA_HEIGHT)
+////            }
+//            cell.contentLbl.text = news.content
+//            
+//            addSeperatorsToView(cell,
+//                width: self.tableViewSize!.width,
+//                height: self.CELL_YES_MEDIA_HEIGHT,
+//                up: true, down: true, left: true, right: true)
+//            
+//            cell.dateLbl.text = news.fullDate
+//            
+//
+//            return cell
+//        }
         
 
     }
@@ -168,18 +196,24 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     }
     
     
+    
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let news = self.newsArr[indexPath.section]
         
-        switch news.kind
-        {
-        case .NO_MEDIA:
-            return self.CELL_NO_MEDIA_HEIGHT
-            
-        case .YES_MEDIA:
-            return self.CELL_YES_MEDIA_HEIGHT
-        }
+        return self.CELL_NO_MEDIA_HEIGHT
+
+//        let news = self.newsArr[indexPath.section]
+//        
+//        switch news.kind
+//        {
+//        case .NO_MEDIA:
+//            return self.CELL_NO_MEDIA_HEIGHT
+//            
+//        case .YES_MEDIA:
+//            return self.CELL_YES_MEDIA_HEIGHT
+//        }
         
     }
     

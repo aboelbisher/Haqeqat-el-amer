@@ -207,6 +207,8 @@ class NewsYesMediaTableViewCell: NewsGenericCellTableViewCell
             
             myImageView.image = UIImage(named: "default")!.resizeTo(CGSizeMake(self.imageViewSize!.width * 0.7, self.imageViewSize!.width * 0.7))
             
+            myImageView.layer.cornerRadius = 10
+            
             
             self.images.append(myImageView)
         }

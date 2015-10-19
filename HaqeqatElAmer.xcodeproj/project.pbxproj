@@ -25,6 +25,9 @@
 		F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */; settings = {ASSET_TAGS = (); }; };
 		F9AF3FCF1BD17C1F00BD20ED /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F9BF40441BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF40431BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F9EA36631BD50F0600969199 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36621BD50E3100969199 /* OpenSans-Light.ttf */; settings = {ASSET_TAGS = (); }; };
+		F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36641BD5103A00969199 /* ArabicKufi.ttf */; settings = {ASSET_TAGS = (); }; };
+		F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		F9AF3FCB1BD1433700BD20ED /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
 		F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		F9BF40431BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsGenericCellTableViewCell.swift; sourceTree = "<group>"; };
+		F9EA36621BD50E3100969199 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		F9EA36641BD5103A00969199 /* ArabicKufi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicKufi.ttf; sourceTree = "<group>"; };
+		F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicRiyadh.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,9 @@
 				F9AF3F821BD105FA00BD20ED /* HttpRequest.swift */,
 				F9AF3F591BD1059700BD20ED /* Assets.xcassets */,
 				F9AF3F5B1BD1059700BD20ED /* LaunchScreen.storyboard */,
+				F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */,
+				F9EA36641BD5103A00969199 /* ArabicKufi.ttf */,
+				F9EA36621BD50E3100969199 /* OpenSans-Light.ttf */,
 				F9AF3F5E1BD1059700BD20ED /* Info.plist */,
 			);
 			path = HaqeqatElAmer;
@@ -280,6 +289,9 @@
 				F9AF3F5D1BD1059700BD20ED /* LaunchScreen.storyboard in Resources */,
 				F9AF3F5A1BD1059700BD20ED /* Assets.xcassets in Resources */,
 				F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */,
+				F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */,
+				F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */,
+				F9EA36631BD50F0600969199 /* OpenSans-Light.ttf in Resources */,
 				F9AF3F581BD1059700BD20ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

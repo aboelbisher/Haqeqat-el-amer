@@ -75,7 +75,7 @@ func heightForView(text : String , font : UIFont , width : CGFloat) -> CGFloat
 {
     let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
     label.numberOfLines = 0
-    label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+    //label.lineBreakMode = NSLineBreakMode.ByWordWrapping
     label.font = font
     label.text = text
     

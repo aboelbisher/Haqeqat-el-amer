@@ -14,6 +14,10 @@ class NewsGenericCellTableViewCell: UITableViewCell
     var dateLbl = UILabel()
     var dateLblSize : ViewConfig?
     
+    var mediaImgView = UIImageView()
+    var mediaImgViewSize : ViewConfig?
+    
+    
     var width = CGFloat(0)
     var height = CGFloat(0)
     
@@ -39,15 +43,21 @@ class NewsGenericCellTableViewCell: UITableViewCell
     //MARK: init
     func preCalculations()
     {
-        self.dateLblSize = ViewConfig(width: self.width * 0.9 ,
+        self.dateLblSize = ViewConfig(width: self.width * 0.7 ,
             height: CGFloat(40) ,
             upMargin: CGFloat(3),
-            downMargin: 0, leftMargin: 0, rightMargin: 0)
+            downMargin: 0, leftMargin: 0, rightMargin: CGFloat(8))
+        
+        self.mediaImgViewSize = ViewConfig(width: CGFloat(40) ,
+            height: CGFloat(40),
+            upMargin: 0, downMargin: 0, leftMargin: CGFloat(5),
+            rightMargin: 0)
     }
     
     func initSubViews()
     {
         self.initDateLbl()
+        self.initMediaImgView()
     }
     
     
@@ -64,12 +74,13 @@ class NewsGenericCellTableViewCell: UITableViewCell
             attribute: NSLayoutAttribute.Top,
             multiplier: 1, constant: -self.dateLblSize!.margin.up))
         
+        
         self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
-            attribute: NSLayoutAttribute.CenterX,
+            attribute: NSLayoutAttribute.Right,
             relatedBy: NSLayoutRelation.Equal,
             toItem: self.dateLbl,
-            attribute: NSLayoutAttribute.CenterX,
-            multiplier: 1, constant: 0))
+            attribute: NSLayoutAttribute.Right,
+            multiplier: 1, constant: self.dateLblSize!.margin.right))
         
         
         self.dateLbl.textAlignment = .Right
@@ -78,7 +89,30 @@ class NewsGenericCellTableViewCell: UITableViewCell
     }
     
     
-    
+    //MARK:  media imageview
+    func initMediaImgView()
+    {
+        self.contentView.addSubview(self.mediaImgView)
+        setViewSizeConf(self.mediaImgView, size: self.mediaImgViewSize!)
+        
+        self.contentView.addConstraint(NSLayoutConstraint(item: self.dateLbl,
+            attribute: NSLayoutAttribute.CenterY,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: self.mediaImgView,
+            attribute: NSLayoutAttribute.CenterY,
+            multiplier: 1, constant: 0))
+        
+        self.contentView.addConstraint(NSLayoutConstraint(item: self.contentView,
+            attribute: NSLayoutAttribute.Left,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: self.mediaImgView,
+            attribute: NSLayoutAttribute.Left,
+            multiplier: 1, constant: -self.mediaImgViewSize!.margin.left))
+        
+        
+        
+        self.mediaImgView.image = UIImage(named: "camera")!
+    }
     
     
     
