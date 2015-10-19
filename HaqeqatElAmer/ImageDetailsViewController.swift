@@ -34,6 +34,9 @@ class ImageDetailsViewController: UIViewController
         
         
         self.view.backgroundColor = UIColor.blackColor()
+        
+        self.preCalculations()
+        self.initSubViews()
     }
     
     
@@ -66,6 +69,24 @@ class ImageDetailsViewController: UIViewController
         setViewSizeConf(self.imgView, size: self.imgViewSize!)
         
         self.imgView.image = UIImage(named: "default")!
+        
+        if let img = images_chache[self.image!.url]
+        {
+            self.imgView.image = img
+        }
+        else
+        {
+            if let url = NSURL(string: self.image!.url)
+            {
+                downloadImgFromUrl(url, completionHandler: { (img) -> Void in
+                    images_chache[self.image!.url] = img
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.imgView.image = img
+                    })
+                })
+            }
+        }
         
         self.view.addConstraint(NSLayoutConstraint(item: self.view,
             attribute: NSLayoutAttribute.CenterX,

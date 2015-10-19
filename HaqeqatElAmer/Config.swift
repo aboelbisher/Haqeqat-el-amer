@@ -19,3 +19,5 @@ let NEWS_FONT = UIFont(name: "MarkerFelt-Thin", size: 18)!
 var bgColor = "#968989" // get it from net
 
 let LINK_IMG = UIImage(named: "www")
+
+var images_chache = [String : UIImage]()

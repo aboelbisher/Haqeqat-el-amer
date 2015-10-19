@@ -361,14 +361,38 @@ class NewsDetailsViewController: UIViewController , UICollectionViewDataSource ,
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        //let news = self.news[indexPath.row]
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.imagesCollectionViewId, forIndexPath: indexPath) as? ImagesCollectionViewCell
         if cell == nil
         {
             cell = ImagesCollectionViewCell(frame: CGRect(x: 0, y: 0, width: self.imageSize!.width, height: self.imageSize!.height))
         }
         
-        
         cell!.imageView.image = UIImage(named: "default")!
+
+        
+        if let img = images_chache[self.news.images[indexPath.row].url]
+        {
+            cell!.imageView.image = img
+        }
+        else
+        {
+            
+            if let url = NSURL(string: self.news.images[indexPath.row].url)
+            {
+                downloadImgFromUrl(url,
+                    completionHandler: { (img) -> Void in
+                        images_chache[self.news.images[indexPath.row].url] = img
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            cell!.imageView.image = img
+                        })
+                })
+            }
+
+            
+        }
+        
+        
         
         return cell!
     }
@@ -377,6 +401,10 @@ class NewsDetailsViewController: UIViewController , UICollectionViewDataSource ,
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         print("selec index \(indexPath.row)" )
+        
+        let vc = ImageDetailsViewController(image: self.news.images[indexPath.row])
+        
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     
