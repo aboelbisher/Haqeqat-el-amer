@@ -41,6 +41,11 @@ class NewsDetailsViewController: UIViewController
     var videoPlayerSize : ViewConfig?
     
     
+    var imageSize : ViewConfig?
+    
+    var imageView1 = UIImageView()
+    var imageView2 = UIImageView()
+    
     //var images
     
     
@@ -66,6 +71,8 @@ class NewsDetailsViewController: UIViewController
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColorFromRGB("#F4F4F4", alpha: 1)
+        
+        self.view.multipleTouchEnabled = true
         
         
         print(self.news.content)
@@ -95,11 +102,13 @@ class NewsDetailsViewController: UIViewController
             downMargin: 0, leftMargin: 0, rightMargin: 0)
         
         
+        //bulllll shittt!!!!!!
         var tmpStr = self.news.content.stringByReplacingOccurrencesOfString("\n", withString: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         tmpStr = tmpStr.stringByReplacingOccurrencesOfString("\\", withString: "a")
         tmpStr = tmpStr.stringByReplacingOccurrencesOfString("-", withString: "a")
         tmpStr = tmpStr.stringByReplacingOccurrencesOfString("\"", withString: "a")
         tmpStr += "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        //bulllll shittt!!!!!!
 
 
         
@@ -123,6 +132,11 @@ class NewsDetailsViewController: UIViewController
             height: self.view.bounds.width * 0.9 ,
             upMargin: CGFloat(10) ,
             downMargin: 0, leftMargin: 0, rightMargin: 0)
+        
+        self.imageSize = ViewConfig(width: self.view.bounds.width * 0.4 ,
+            height: self.view.bounds.width * 0.4,
+            upMargin: CGFloat(30) ,
+            downMargin: 0, leftMargin: self.view.bounds.width * 0.1, rightMargin: self.view.bounds.width * 0.1)
     }
     
     func initSubViews()
@@ -136,6 +150,8 @@ class NewsDetailsViewController: UIViewController
         {
             self.initVideoPlayer()
         }
+        
+        self.initImages()
         
     }
 
@@ -154,7 +170,20 @@ class NewsDetailsViewController: UIViewController
             multiplier: 1, constant: 0))
         
         
-        let height = self.datelblSize!.height + self.datelblSize!.margin.up + self.contentLblSize!.height + self.contentLblSize!.margin.up + self.videoPlayerSize!.height + self.videoPlayerSize!.margin.up
+        var height = self.datelblSize!.height + self.datelblSize!.margin.up + self.contentLblSize!.height + self.contentLblSize!.margin.up
+        
+        if self.news.videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != ""
+        {
+            height += self.videoPlayerSize!.height + self.videoPlayerSize!.margin.up
+        }
+        
+        
+        if self.news.images.count > 0
+        {
+            height += self.imageSize!.height + self.imageSize!.margin.up
+        }
+        
+        height += CGFloat(30)
         
         self.scrollView.contentSize = CGSizeMake(self.scrollViewSize!.width, height)
         
@@ -190,7 +219,7 @@ class NewsDetailsViewController: UIViewController
         self.dateLbl.text = self.news.date.date + " " + self.news.date.day + " " + self.news.date.hour
         self.dateLbl.textAlignment = .Right
         self.dateLbl.textColor = UIColor.redColor()
-        self.dateLbl.font = UIFont.systemFontOfSize(12)
+        self.dateLbl.font = UIFont.systemFontOfSize(15)
         
         //self.dateLbl.backgroundColor = UIColor.redColor()
         
@@ -276,13 +305,132 @@ class NewsDetailsViewController: UIViewController
     
     func initImages()
     {
+        //let imageView1 = UIImageView()
+        setViewSizeConf(imageView1, size: imageSize!)
+        //        self.scrollView.addSubview(imageView2)
+        imageView1.layer.cornerRadius = 10
+        imageView1.tag = 3
+
+        
+        //let imageView2 = UIImageView()
+        setViewSizeConf(imageView2, size: imageSize!)
+//        self.scrollView.addSubview(imageView2)
+        imageView2.layer.cornerRadius = 10
+        imageView2.tag = 1
+        
+        imageView1.image = UIImage(named: "default")!
+        imageView2.image = UIImage(named: "default")!
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "imgViewTapped:")
+        
+        imageView1.userInteractionEnabled = true
+        imageView1.addGestureRecognizer(tapGesture)
+        
+        imageView2.userInteractionEnabled = true
+        imageView2.addGestureRecognizer(tapGesture)
+
+        
+        if self.news.images.count == 1
+        {
+//            let imageView = UIImageView()
+//            setViewSizeConf(imageView, size: imageSize!)
+//            
+//            imageView.layer.cornerRadius = 10
+//            
+            self.scrollView.addSubview(imageView1)
+//
+//            imageView.image = UIImage(named: "default")!
+            
+            let upView = self.news.videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != "" ? self.videoPlayer : self.contentLbl
+
+            
+            let views = ["upView" : upView ,
+                "img" : imageView1]
+            
+            let metrics = ["upMargin" : self.imageSize!.margin.up]
+            
+            let img_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[img]",
+                options: NSLayoutFormatOptions.AlignAllCenterX,
+                metrics: metrics,
+                views: views)
+            
+            self.scrollView.addConstraints(img_up_margin)
+            
+            
+            
+            
+        }
+        else if self.news.images.count == 2
+        {
+//            let imageView1 = UIImageView()
+//            setViewSizeConf(imageView1, size: imageSize!)
+            self.scrollView.addSubview(imageView1)
+//            imageView1.layer.cornerRadius = 10
+//            
+//            let imageView2 = UIImageView()
+//            setViewSizeConf(imageView2, size: imageSize!)
+            self.scrollView.addSubview(imageView2)
+//            imageView2.layer.cornerRadius = 10
+//            
+//            imageView1.image = UIImage(named: "default")!
+//            imageView2.image = UIImage(named: "default")!
+            
+            let upView = self.news.videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != "" ? self.videoPlayer : self.contentLbl
+            
+            
+            let views = ["upView" : upView ,
+                "img1" : imageView1 ,
+                "img2" : imageView2]
+            
+            let metrics = ["upMargin" : self.imageSize!.margin.up]
+            
+            let img1_up_margin = NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[img1]",
+                options: NSLayoutFormatOptions.AlignAllLeft,
+                metrics: metrics,
+                views: views)
+            
+            let img2_up_margin =  NSLayoutConstraint.constraintsWithVisualFormat("V:[upView]-upMargin-[img2]",
+                options: NSLayoutFormatOptions.AlignAllRight,
+                metrics: metrics,
+                views: views)
+            
+            self.scrollView.addConstraints(img1_up_margin)
+            self.scrollView.addConstraints(img2_up_margin)
+            
+        }
         
     }
     
     
     
+    func imgViewTapped(recognizer : UIGestureRecognizer)
+    {
+        
+        print("image view with tag \(recognizer.view!.tag) clicked")
+        let image = self.news.images[recognizer.view!.tag]
+        
+        let vc = ImageDetailsViewController(image: image)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    
+    }
     
     
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+    {
+        super.touchesBegan(touches, withEvent: event)
+        
+        for touch in touches
+        {
+            let point = touch.locationInView(self.imageView1)
+            print(point)
+        }
+        
+        
+    }
     
     
     

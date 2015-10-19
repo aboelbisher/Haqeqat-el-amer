@@ -21,13 +21,13 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     
     var newsArr = [News]()
     
-    var lastIndex = 0
+    var lastIndex = 1
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationBarCustomizations()
-        self.bringNews(0)
+        self.bringNews(self.lastIndex)
         self.view.backgroundColor = UIColorFromRGB("#F4F4F4", alpha: 1)
         
         self.preCalculations()
@@ -64,6 +64,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     //MARK: bring news
     func bringNews(index : Int)
     {
+        
+        print("index => \(index)")
                 
         makeRequestWithJsonArray("GET", api: NEWS_API + "/" + index.description,
             params: nil, values: nil) { (arr, dic) -> Void in

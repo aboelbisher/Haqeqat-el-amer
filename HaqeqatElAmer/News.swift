@@ -35,7 +35,7 @@ struct NewsImage
 {
     var url : String
     var info : String // description
-    var image : UIImage?
+    //var image : UIImage?
 }
 
 
@@ -93,14 +93,21 @@ class News
         {
             if videoLink.stringByReplacingOccurrencesOfString(" ", withString: "") != ""
             {
+                var newVideoId = ""
                 if videoLink.containsString("&")
                 {
                     let endRange = videoLink.rangeOfString("&", options: NSStringCompareOptions.LiteralSearch, range: nil, locale: nil)
                     let rangeOfId = Range(start: videoLink.startIndex, end: endRange!.startIndex)
-                    let newVideoId = videoLink.substringWithRange(rangeOfId)
-                    self.videoLink = newVideoId
-
-                } 
+                    newVideoId = videoLink.substringWithRange(rangeOfId)
+                    
+                }
+                else
+                {
+                    newVideoId = videoLink
+                }
+                
+                
+                self.videoLink = newVideoId
             }
            
         }
@@ -137,7 +144,7 @@ class News
                     let url = myImage[JSON_IMAGES_IMAGE] as! String
                     let info = myImage[JSON_IMAGES_INFO] as! String
                     
-                    let newsImage = NewsImage(url: url, info: info , image : nil)
+                    let newsImage = NewsImage(url: url, info: info )
                     
                     imagesArr.append(newsImage)
                 }

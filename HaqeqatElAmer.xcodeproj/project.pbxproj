@@ -28,6 +28,7 @@
 		F9EA36631BD50F0600969199 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36621BD50E3100969199 /* OpenSans-Light.ttf */; settings = {ASSET_TAGS = (); }; };
 		F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36641BD5103A00969199 /* ArabicKufi.ttf */; settings = {ASSET_TAGS = (); }; };
 		F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */; settings = {ASSET_TAGS = (); }; };
+		F9EA36691BD55D5500969199 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F9EA36621BD50E3100969199 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		F9EA36641BD5103A00969199 /* ArabicKufi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicKufi.ttf; sourceTree = "<group>"; };
 		F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicRiyadh.ttf; sourceTree = "<group>"; };
+		F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				F9AF3FC91BD1432E00BD20ED /* YouTube */,
 				F9AF3F521BD1059700BD20ED /* AppDelegate.swift */,
 				F9AF3F541BD1059700BD20ED /* ViewController.swift */,
+				F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */,
 				F9AF3F841BD1067100BD20ED /* News */,
 				F9AF3F561BD1059700BD20ED /* Main.storyboard */,
 				F9AF3F801BD105C900BD20ED /* HelpFunc.swift */,
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9EA36691BD55D5500969199 /* ImageDetailsViewController.swift in Sources */,
 				F9AF3F811BD105C900BD20ED /* HelpFunc.swift in Sources */,
 				F9AF3F831BD105FA00BD20ED /* HttpRequest.swift in Sources */,
 				F9AF3F551BD1059700BD20ED /* ViewController.swift in Sources */,
