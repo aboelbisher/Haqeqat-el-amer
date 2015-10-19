@@ -29,6 +29,18 @@
 		F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36641BD5103A00969199 /* ArabicKufi.ttf */; settings = {ASSET_TAGS = (); }; };
 		F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */; settings = {ASSET_TAGS = (); }; };
 		F9EA36691BD55D5500969199 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F9EA366B1BD571A400969199 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA366A1BD571A400969199 /* AudioToolbox.framework */; };
+		F9EA366D1BD571A800969199 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA366C1BD571A800969199 /* StoreKit.framework */; };
+		F9EA366F1BD571B300969199 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA366E1BD571B300969199 /* CoreGraphics.framework */; };
+		F9EA36711BD571BC00969199 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36701BD571BC00969199 /* CFNetwork.framework */; };
+		F9EA36731BD571C600969199 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36721BD571C600969199 /* CoreLocation.framework */; };
+		F9EA36751BD571CD00969199 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36741BD571CD00969199 /* QuartzCore.framework */; };
+		F9EA36771BD571D300969199 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36761BD571D300969199 /* Security.framework */; };
+		F9EA36791BD571E300969199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36781BD571E300969199 /* SystemConfiguration.framework */; };
+		F9EA367B1BD571ED00969199 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA367A1BD571ED00969199 /* libz.tbd */; };
+		F9EA367D1BD571F400969199 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA367C1BD571F400969199 /* libsqlite3.tbd */; };
+		F9EA367F1BD572B400969199 /* parse-library-1.9.0 in Resources */ = {isa = PBXBuildFile; fileRef = F9EA367E1BD572B400969199 /* parse-library-1.9.0 */; settings = {ASSET_TAGS = (); }; };
+		F9EA36811BD5786100969199 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA36801BD5786100969199 /* ImagesCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,18 @@
 		F9EA36641BD5103A00969199 /* ArabicKufi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicKufi.ttf; sourceTree = "<group>"; };
 		F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArabicRiyadh.ttf; sourceTree = "<group>"; };
 		F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		F9EA366A1BD571A400969199 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F9EA366C1BD571A800969199 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F9EA366E1BD571B300969199 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9EA36701BD571BC00969199 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F9EA36721BD571C600969199 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F9EA36741BD571CD00969199 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F9EA36761BD571D300969199 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F9EA36781BD571E300969199 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F9EA367A1BD571ED00969199 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F9EA367C1BD571F400969199 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F9EA367E1BD572B400969199 /* parse-library-1.9.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.9.0"; sourceTree = "<group>"; };
+		F9EA36801BD5786100969199 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +108,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9EA367D1BD571F400969199 /* libsqlite3.tbd in Frameworks */,
+				F9EA367B1BD571ED00969199 /* libz.tbd in Frameworks */,
+				F9EA36791BD571E300969199 /* SystemConfiguration.framework in Frameworks */,
+				F9EA36771BD571D300969199 /* Security.framework in Frameworks */,
+				F9EA36751BD571CD00969199 /* QuartzCore.framework in Frameworks */,
+				F9EA36731BD571C600969199 /* CoreLocation.framework in Frameworks */,
+				F9EA36711BD571BC00969199 /* CFNetwork.framework in Frameworks */,
+				F9EA366F1BD571B300969199 /* CoreGraphics.framework in Frameworks */,
+				F9EA366D1BD571A800969199 /* StoreKit.framework in Frameworks */,
+				F9EA366B1BD571A400969199 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +141,17 @@
 		F9AF3F461BD1059700BD20ED = {
 			isa = PBXGroup;
 			children = (
+				F9EA367C1BD571F400969199 /* libsqlite3.tbd */,
+				F9EA367A1BD571ED00969199 /* libz.tbd */,
+				F9EA367E1BD572B400969199 /* parse-library-1.9.0 */,
+				F9EA36781BD571E300969199 /* SystemConfiguration.framework */,
+				F9EA36761BD571D300969199 /* Security.framework */,
+				F9EA36741BD571CD00969199 /* QuartzCore.framework */,
+				F9EA36721BD571C600969199 /* CoreLocation.framework */,
+				F9EA36701BD571BC00969199 /* CFNetwork.framework */,
+				F9EA366E1BD571B300969199 /* CoreGraphics.framework */,
+				F9EA366C1BD571A800969199 /* StoreKit.framework */,
+				F9EA366A1BD571A400969199 /* AudioToolbox.framework */,
 				F9AF3F511BD1059700BD20ED /* HaqeqatElAmer */,
 				F9AF3F661BD1059700BD20ED /* HaqeqatElAmerTests */,
 				F9AF3F711BD1059700BD20ED /* HaqeqatElAmerUITests */,
@@ -168,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				F9AF3F871BD10AEA00BD20ED /* NewsImageView.swift */,
+				F9EA36801BD5786100969199 /* ImagesCollectionViewCell.swift */,
 				F9AF3F851BD1068900BD20ED /* News.swift */,
 				F9AF3FCE1BD17C1F00BD20ED /* NewsDetailsViewController.swift */,
 				F9AF3F8B1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift */,
@@ -292,6 +338,7 @@
 				F9AF3F5D1BD1059700BD20ED /* LaunchScreen.storyboard in Resources */,
 				F9AF3F5A1BD1059700BD20ED /* Assets.xcassets in Resources */,
 				F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */,
+				F9EA367F1BD572B400969199 /* parse-library-1.9.0 in Resources */,
 				F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */,
 				F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */,
 				F9EA36631BD50F0600969199 /* OpenSans-Light.ttf in Resources */,
@@ -332,6 +379,7 @@
 				F9AF3FCF1BD17C1F00BD20ED /* NewsDetailsViewController.swift in Sources */,
 				F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */,
 				F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */,
+				F9EA36811BD5786100969199 /* ImagesCollectionViewCell.swift in Sources */,
 				F9AF3F881BD10AEA00BD20ED /* NewsImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
