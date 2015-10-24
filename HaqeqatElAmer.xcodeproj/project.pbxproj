@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F904102C1BDB2F9C001BFD3E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F904102A1BDB2F9C001BFD3E /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		F904102D1BDB2F9C001BFD3E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F904102B1BDB2F9C001BFD3E /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		F90410321BDB315B001BFD3E /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90410311BDB315B001BFD3E /* SwiftSpinner.swift */; settings = {ASSET_TAGS = (); }; };
+		F90410341BDB3324001BFD3E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90410331BDB3324001BFD3E /* AboutViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F9AF3F531BD1059700BD20ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F521BD1059700BD20ED /* AppDelegate.swift */; };
 		F9AF3F551BD1059700BD20ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AF3F541BD1059700BD20ED /* ViewController.swift */; };
 		F9AF3F581BD1059700BD20ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9AF3F561BD1059700BD20ED /* Main.storyboard */; };
@@ -39,7 +43,6 @@
 		F9EA36791BD571E300969199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA36781BD571E300969199 /* SystemConfiguration.framework */; };
 		F9EA367B1BD571ED00969199 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA367A1BD571ED00969199 /* libz.tbd */; };
 		F9EA367D1BD571F400969199 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F9EA367C1BD571F400969199 /* libsqlite3.tbd */; };
-		F9EA367F1BD572B400969199 /* parse-library-1.9.0 in Resources */ = {isa = PBXBuildFile; fileRef = F9EA367E1BD572B400969199 /* parse-library-1.9.0 */; settings = {ASSET_TAGS = (); }; };
 		F9EA36811BD5786100969199 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA36801BD5786100969199 /* ImagesCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F904102A1BDB2F9C001BFD3E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F904102B1BDB2F9C001BFD3E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F90410311BDB315B001BFD3E /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		F90410331BDB3324001BFD3E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F9AF3F4F1BD1059700BD20ED /* HaqeqatElAmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaqeqatElAmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AF3F521BD1059700BD20ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9AF3F541BD1059700BD20ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +106,6 @@
 		F9EA36781BD571E300969199 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9EA367A1BD571ED00969199 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F9EA367C1BD571F400969199 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		F9EA367E1BD572B400969199 /* parse-library-1.9.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library-1.9.0"; sourceTree = "<group>"; };
 		F9EA36801BD5786100969199 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +122,9 @@
 				F9EA36731BD571C600969199 /* CoreLocation.framework in Frameworks */,
 				F9EA36711BD571BC00969199 /* CFNetwork.framework in Frameworks */,
 				F9EA366F1BD571B300969199 /* CoreGraphics.framework in Frameworks */,
+				F904102C1BDB2F9C001BFD3E /* Bolts.framework in Frameworks */,
 				F9EA366D1BD571A800969199 /* StoreKit.framework in Frameworks */,
+				F904102D1BDB2F9C001BFD3E /* Parse.framework in Frameworks */,
 				F9EA366B1BD571A400969199 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,12 +146,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F9AF3F461BD1059700BD20ED = {
+		F904102E1BDB30CB001BFD3E /* SKD's */ = {
 			isa = PBXGroup;
 			children = (
 				F9EA367C1BD571F400969199 /* libsqlite3.tbd */,
 				F9EA367A1BD571ED00969199 /* libz.tbd */,
-				F9EA367E1BD572B400969199 /* parse-library-1.9.0 */,
+				F904102A1BDB2F9C001BFD3E /* Bolts.framework */,
+				F904102B1BDB2F9C001BFD3E /* Parse.framework */,
 				F9EA36781BD571E300969199 /* SystemConfiguration.framework */,
 				F9EA36761BD571D300969199 /* Security.framework */,
 				F9EA36741BD571CD00969199 /* QuartzCore.framework */,
@@ -152,6 +161,14 @@
 				F9EA366E1BD571B300969199 /* CoreGraphics.framework */,
 				F9EA366C1BD571A800969199 /* StoreKit.framework */,
 				F9EA366A1BD571A400969199 /* AudioToolbox.framework */,
+			);
+			name = "SKD's";
+			sourceTree = "<group>";
+		};
+		F9AF3F461BD1059700BD20ED = {
+			isa = PBXGroup;
+			children = (
+				F904102E1BDB30CB001BFD3E /* SKD's */,
 				F9AF3F511BD1059700BD20ED /* HaqeqatElAmer */,
 				F9AF3F661BD1059700BD20ED /* HaqeqatElAmerTests */,
 				F9AF3F711BD1059700BD20ED /* HaqeqatElAmerUITests */,
@@ -172,10 +189,12 @@
 		F9AF3F511BD1059700BD20ED /* HaqeqatElAmer */ = {
 			isa = PBXGroup;
 			children = (
+				F90410311BDB315B001BFD3E /* SwiftSpinner.swift */,
 				F9AF3FC91BD1432E00BD20ED /* YouTube */,
 				F9AF3F521BD1059700BD20ED /* AppDelegate.swift */,
 				F9AF3F541BD1059700BD20ED /* ViewController.swift */,
 				F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */,
+				F90410331BDB3324001BFD3E /* AboutViewController.swift */,
 				F9AF3F841BD1067100BD20ED /* News */,
 				F9AF3F561BD1059700BD20ED /* Main.storyboard */,
 				F9AF3F801BD105C900BD20ED /* HelpFunc.swift */,
@@ -338,7 +357,6 @@
 				F9AF3F5D1BD1059700BD20ED /* LaunchScreen.storyboard in Resources */,
 				F9AF3F5A1BD1059700BD20ED /* Assets.xcassets in Resources */,
 				F9AF3FCD1BD1433700BD20ED /* YTPlayer.html in Resources */,
-				F9EA367F1BD572B400969199 /* parse-library-1.9.0 in Resources */,
 				F9EA36671BD5123700969199 /* ArabicRiyadh.ttf in Resources */,
 				F9EA36651BD5103A00969199 /* ArabicKufi.ttf in Resources */,
 				F9EA36631BD50F0600969199 /* OpenSans-Light.ttf in Resources */,
@@ -372,6 +390,7 @@
 				F9AF3F831BD105FA00BD20ED /* HttpRequest.swift in Sources */,
 				F9AF3F551BD1059700BD20ED /* ViewController.swift in Sources */,
 				F9AF3F8A1BD10B3700BD20ED /* Config.swift in Sources */,
+				F90410321BDB315B001BFD3E /* SwiftSpinner.swift in Sources */,
 				F9AF3F861BD1068900BD20ED /* News.swift in Sources */,
 				F9AF3F531BD1059700BD20ED /* AppDelegate.swift in Sources */,
 				F9BF40441BD3325000BEADB2 /* NewsGenericCellTableViewCell.swift in Sources */,
@@ -380,6 +399,7 @@
 				F9AF3F8E1BD122E800BD20ED /* NewsYesMediaTableViewCell.swift in Sources */,
 				F9AF3F8C1BD10BD500BD20ED /* NewsNoMediaTableViewCell.swift in Sources */,
 				F9EA36811BD5786100969199 /* ImagesCollectionViewCell.swift in Sources */,
+				F90410341BDB3324001BFD3E /* AboutViewController.swift in Sources */,
 				F9AF3F881BD10AEA00BD20ED /* NewsImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +472,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wael Awwad (76NDMAZG69)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wael Awwad (76NDMAZG69)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -474,6 +495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -496,7 +518,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wael Awwad (76NDMAZG69)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wael Awwad (76NDMAZG69)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -511,6 +534,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -520,10 +544,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HaqeqatElAmer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = aboelbisher.HaqeqatElAmer;
+				PRODUCT_BUNDLE_IDENTIFIER = Haqeqa.HaqeqatElAmer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
 			};
 			name = Debug;
 		};
@@ -531,10 +560,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HaqeqatElAmer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = aboelbisher.HaqeqatElAmer;
+				PRODUCT_BUNDLE_IDENTIFIER = Haqeqa.HaqeqatElAmer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
 			};
 			name = Release;
 		};

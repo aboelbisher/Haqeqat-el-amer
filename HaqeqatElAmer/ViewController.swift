@@ -30,8 +30,13 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
         self.bringNews(self.lastIndex)
         self.view.backgroundColor = UIColorFromRGB("#F4F4F4", alpha: 1)
         
-        self.preCalculations()
-        self.initSubViews()
+        
+        SwiftSpinner.show("جاري التحميل")
+        
+
+        
+//        self.preCalculations()
+//        self.initSubViews()
     }
 
     override func didReceiveMemoryWarning()
@@ -44,6 +49,21 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     func navigationBarCustomizations()
     {
         self.navigationItem.title = "حقيقة الأمر"
+        
+        
+        let cancelBtn = UIBarButtonItem(image: UIImage(named: "about")!.resizeTo(CGSizeMake(self.navigationController!.navigationBar.frame.height * 0.6 , self.navigationController!.navigationBar.frame.height * 0.6)), style: UIBarButtonItemStyle.Bordered, target: self, action: "about:")
+        
+        self.navigationItem.leftBarButtonItem = cancelBtn
+        
+    }
+    
+    
+    func about(sender :UIBarButtonItem)
+    {
+        let aboutVc = AboutViewController()
+        self.presentViewController(aboutVc, animated: true) { () -> Void in
+            
+        }
     }
     
     //MARK: init
@@ -76,7 +96,11 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.preCalculations()
+                    self.initSubViews()
                     self.tableView.reloadData()
+                    SwiftSpinner.hide()
+
                 })
         }
     }

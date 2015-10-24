@@ -35,6 +35,8 @@ class ImageDetailsViewController: UIViewController
         
         self.view.backgroundColor = UIColor.blackColor()
         
+        
+        
         self.preCalculations()
         self.initSubViews()
     }
