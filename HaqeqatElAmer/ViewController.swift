@@ -23,6 +23,9 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     
     var lastIndex = 1
     
+    var refreshController : UIRefreshControl?
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -35,8 +38,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
         
 
         
-//        self.preCalculations()
-//        self.initSubViews()
+        self.preCalculations()
+        self.initSubViews()
     }
 
     override func didReceiveMemoryWarning()
@@ -89,6 +92,7 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
                 
         makeRequestWithJsonArray("GET", api: NEWS_API + "/" + index.description,
             params: nil, values: nil) { (arr, dic) -> Void in
+                
                 for newsDic in arr
                 {
                     let oneNews = News(newsDic: newsDic as! NSDictionary)
@@ -96,8 +100,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.preCalculations()
-                    self.initSubViews()
+//                    self.preCalculations()
+//                    self.initSubViews()
                     self.tableView.reloadData()
                     SwiftSpinner.hide()
 
@@ -139,6 +143,8 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
         
         self.tableView.backgroundColor = UIColor.clearColor()
         
+        self.initRefreshController()
+        
         
     }
     
@@ -172,47 +178,6 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
         
         return cell!
 
-        
-//        switch news.kind
-//        {
-//        case .NO_MEDIA:
-//            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_NO_MEDIA_ID) as? NewsNoMediaTableViewCell
-//            if cell == nil
-//            {
-//                cell = NewsNoMediaTableViewCell(reuseId: self.CELL_NO_MEDIA_ID, width: self.tableViewSize!.width, height: self.CELL_NO_MEDIA_HEIGHT)
-//            }
-//            
-//            cell!.contentLbl.text = news.content
-//            
-//            addSeperatorsToView(cell!, width: self.tableViewSize!.width,
-//                height: self.CELL_NO_MEDIA_HEIGHT, up: true, down: true, left: true, right: true)
-//            
-//            cell?.dateLbl.text = news.fullDate
-//
-//            return cell!
-//
-//            
-//        case .YES_MEDIA:
-////            var cell = tableView.dequeueReusableCellWithIdentifier(self.CELL_YES_MEDIA_ID) as? NewsYesMediaTableViewCell
-////            
-////            if cell == nil
-////            {
-//            let cell = NewsYesMediaTableViewCell(news : news , width: self.tableViewSize!.width, height: self.CELL_YES_MEDIA_HEIGHT)
-////            }
-//            cell.contentLbl.text = news.content
-//            
-//            addSeperatorsToView(cell,
-//                width: self.tableViewSize!.width,
-//                height: self.CELL_YES_MEDIA_HEIGHT,
-//                up: true, down: true, left: true, right: true)
-//            
-//            cell.dateLbl.text = news.fullDate
-//            
-//
-//            return cell
-//        }
-        
-
     }
     
     
@@ -229,18 +194,6 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     {
         
         return self.CELL_NO_MEDIA_HEIGHT
-
-//        let news = self.newsArr[indexPath.section]
-//        
-//        switch news.kind
-//        {
-//        case .NO_MEDIA:
-//            return self.CELL_NO_MEDIA_HEIGHT
-//            
-//        case .YES_MEDIA:
-//            return self.CELL_YES_MEDIA_HEIGHT
-//        }
-        
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
@@ -277,7 +230,24 @@ class ViewController: UIViewController , UITableViewDataSource , UITableViewDele
     }
     
     
+    //MARK: refresher 
+    func initRefreshController()
+    {
+        self.refreshController = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: CGFloat(50), height: CGFloat(50)))
+        self.refreshController!.backgroundColor = UIColor.clearColor()
+        self.refreshController!.tintColor = UIColor.blackColor()
+        self.refreshController!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshController!)
+    }
     
+    func refresh(refreshControl :UIRefreshControl)
+    {
+        self.newsArr = [News]()
+        
+        refreshControl.endRefreshing()
+        self.bringNews(1)
+        print("refreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesh")
+    }
     
     
     

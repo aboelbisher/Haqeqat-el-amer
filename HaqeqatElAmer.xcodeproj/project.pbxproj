@@ -196,10 +196,10 @@
 				F9EA36681BD55D5500969199 /* ImageDetailsViewController.swift */,
 				F90410331BDB3324001BFD3E /* AboutViewController.swift */,
 				F9AF3F841BD1067100BD20ED /* News */,
-				F9AF3F561BD1059700BD20ED /* Main.storyboard */,
 				F9AF3F801BD105C900BD20ED /* HelpFunc.swift */,
 				F9AF3F891BD10B3700BD20ED /* Config.swift */,
 				F9AF3F821BD105FA00BD20ED /* HttpRequest.swift */,
+				F9AF3F561BD1059700BD20ED /* Main.storyboard */,
 				F9AF3F591BD1059700BD20ED /* Assets.xcassets */,
 				F9AF3F5B1BD1059700BD20ED /* LaunchScreen.storyboard */,
 				F9EA36661BD5123700969199 /* ArabicRiyadh.ttf */,
@@ -472,8 +472,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wael Awwad (76NDMAZG69)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wael Awwad (76NDMAZG69)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -495,7 +495,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -518,8 +518,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wael Awwad (76NDMAZG69)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wael Awwad (76NDMAZG69)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wael Awwad (CFNQ265NSZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wael Awwad (CFNQ265NSZ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -534,7 +534,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
+				PROVISIONING_PROFILE = "9e335f22-ea84-4d8a-a87f-3dc2c25b3173";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -544,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -552,7 +553,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Haqeqa.HaqeqatElAmer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -560,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wael Awwad (CFNQ265NSZ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -568,7 +570,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Haqeqa.HaqeqatElAmer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aeeaed4a-7bd9-49e5-a0a0-3ef11ef495ea";
+				PROVISIONING_PROFILE = "9e335f22-ea84-4d8a-a87f-3dc2c25b3173";
 			};
 			name = Release;
 		};
